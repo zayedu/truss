@@ -123,8 +123,7 @@ async def test_execute_request_sets_none_when_no_request_id_header(app_path):
 
 @pytest.mark.anyio
 @pytest.mark.parametrize(
-    "content_type",
-    ["application/octet-stream; charset=binary", "Application/Octet-Stream"],
+    "content_type", ["application/octet-stream; padding=0", "Application/Octet-Stream"]
 )
 async def test_binary_request_accepts_content_type_variants(app_path, content_type):
     mock_request = _make_connected_request()
